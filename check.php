@@ -1,3 +1,3 @@
 <?php
-header('Location: main.html');
+header('Location: main.html?#');
 ?>
