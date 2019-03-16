@@ -44,7 +44,8 @@
                     <div class="col-md-6 mx-auto">
                       <ul class="list-unstyled menu">
                         <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="login.html">Veiw Booking</a></li>
+						<li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="">Veiw Booking</a></li>
 						<li><a href="about.html">About</a></li>
                       </ul>
                     </div>
@@ -60,21 +61,21 @@
 	
 		
 <!-- Modal -->
-	<div class="modal fade" id="confirmModal" role="dialog">
+	<div class="modal fade" id="availabilityModal" role="dialog">
 	<div class="modal-dialog">
     
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-			<h4 style="text-align:left">Booking confirmation</h4>
+			<h4 style="text-align:left">Availabilty</h4>
 			<button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <p>Confirm booking:</p>
 				<p>Departure:Macau</p>
 				<p>Destination:London</p>
 				<p>Departure date: 18/3/2019</p>
 				<p>Amount: 1 adult(s), 1 children</p>
+				<p>Tickets remaining:36</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary btn-block text-white" data-dismiss="modal" >Confirm</button>
@@ -138,15 +139,6 @@
                   </div>
                 </div>
 				
-				<!-- departure date -->
-				<div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-					<label for="checkin_date" class="font-weigh-bold text-black">Departure date</label>
-					<div class="field-icon-wrap">
-						<div class="icon"><span class="icon-calendar"></span></div>
-						<input type="text" id="checkin_date" class="form-control" placeholder="required">
-					</div>
-				</div>
-				
                 <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
                   <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
@@ -181,12 +173,12 @@
 				
 				</div>
 				
-                <div class="col-md-6 col-lg-3 align-self-center" style="top:10px">
-                  <button class="btn btn-primary btn-block text-white" data-toggle="modal" data-target="#confirmModal">Book</button>	  	  
+                <div class="col-md-6 col-lg-3 align-self-end">
+                  <button class="btn btn-primary btn-block text-white" data-toggle="modal" data-target="#availabilityModal">Check Availabilty</button>	  	  
                 </div>
 				
-				<div class="col-md-6 col-lg-3 align-self-center" style="top:10px">
-					<a href="#3" class="btn btn-primary text-white py-2 mr-3">ViewBooking</a></span>
+				<div class="col-md-6 col-lg-3 align-self-center" style="top:10px;">
+					<a href="reservation.html" class="btn btn-primary text-white py-2 mr-3">reserve now</a></span>
 				</div>
               </div>
             </form>
@@ -223,30 +215,40 @@
       <div class="container">
 		<h1>Booking information</h1>
 		<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Date</th>
-	  <th scope="col">Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Macau</td>
-      <td>London</td>
-      <td>18/3/2019</td>
-	  <td>1 adult(s), 1 children</td>
-    </tr>
-   
-  </tbody>
-</table>
+			<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">From</th>
+				<th scope="col">To</th>
+				<th scope="col">Date</th>
+				<th scope="col">Amount</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+				<th scope="row">1</th>
+				<td>Macau</td>
+				<td>London</td>
+				<td>18/3/2019</td>
+				<td>1 adult(s), 1 children</td>
+				</tr>
+			</tbody>
+		</table>
       </div>
     </section>
-
-    
+	
+	<section class="section bg-image overlay" style="background-image: url('./index_assets/images/hero_4.jpg');">
+        <div class="container" >
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left" data-aos="fade-up">
+              <h2 class="text-white font-weight-bold">The Best Travel Mode. Reserve Now!</h2>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-right" data-aos="fade-up" data-aos-delay="200">
+              <a href="reservation.html" class="btn btn-outline-white-primary py-3 text-white px-5">Reserve Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <footer class="section footer-section">
       <div class="container">
