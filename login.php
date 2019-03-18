@@ -21,12 +21,11 @@
 	$response = $conn->query($sql);
 
 	if ($response->num_rows == 1){
-		header("Refresh:3;url=main.html");
+		header("Refresh:0;url=main.html");
 	}
 	
 	else {
 		echo("please try again");
-		echo($clientPassword);
-		header("Refresh:1000;url=main.html");
+		header("Refresh:3;url=login.html");
 	}
 ?>

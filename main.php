@@ -89,7 +89,7 @@
       <div class="container">
         <div class="row site-hero-inner justify-content-center align-items-center">
           <div class="col-md-10 text-center" data-aos="fade-up">
-            <h1 class="heading">Welcome Thomas</h1>
+            <h1 class="heading">Welcome guest</h1>
           </div>
         </div>
       </div>
@@ -215,24 +215,48 @@
       <div class="container">
 		<h1>Booking information</h1>
 		<table class="table">
-			<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">From</th>
-				<th scope="col">To</th>
-				<th scope="col">Date</th>
-				<th scope="col">Amount</th>
-			</tr>
-			</thead>
-			<tbody>
-				<tr>
-				<th scope="row">1</th>
-				<td>Macau</td>
-				<td>London</td>
-				<td>18/3/2019</td>
-				<td>1 adult(s), 1 children</td>
-				</tr>
-			</tbody>
+			<?php 
+					//db setting
+					$servername = "localhost";
+					$username = "root";
+					$password = "root";
+					$dbname = "hyperloop";
+	
+					// Create connection
+					$conn = mysqli_connect($servername, $username, $password, $dbname);
+					// Check connection
+					if (!$conn) {
+						die("Connection failed: " . mysqli_connect_error());
+					}
+
+					$sql= "select * from BookingTable";
+					$response = $conn->query($sql);
+						echo "<thead>";
+							echo "</tr>";
+								echo "<th>Departure</th>";
+								echo "<th>Destination</th>";
+								echo "<th>Date</th>";
+								echo "<th>Phone</th>";
+								echo "<th>Email</th>";
+								echo "<th>Adult</th>";
+								echo "<th>Children</th>";
+							echo "</tr>";
+						echo "</thead>";
+						echo "<tbody>";	
+							while($row = $response->fetch_assoc()) {                     
+								echo "<tr>";
+									echo "<td>$row[departure]</td>";     //field name
+									echo "<td>$row[destination]</td>";
+									echo "<td>$row[date]</td>";
+									echo "<td>$row[phone]</td>";
+									echo "<td>$row[email]</td>";
+									echo "<td>$row[adult]</td>";
+									echo "<td>$row[children]</td>";
+								echo "</tr>";
+							}
+						echo "</tbody>";
+			?>
+
 		</table>
       </div>
     </section>
